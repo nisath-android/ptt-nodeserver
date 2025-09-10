@@ -1,0 +1,4 @@
+export default {
+    PORT: 3001,
+    UPLOAD_DIR: 'uploads'
+};
