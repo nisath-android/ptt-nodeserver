@@ -11,7 +11,8 @@ app.use('/uploads', express.static(config.UPLOAD_DIR));
 app.use('/media', mediaRouter);
 
 const server = http.createServer(app);
-const wss = new WebSocketServer({ server });   // <- use WebSocketServer
+//const wss = new WebSocketServer({ server });   // <- use WebSocketServer
+const wss = new WebSocketServer({ server, host: '0.0.0.0' });
 
 wss.on('connection', (ws) => handlePTTConnection(ws, wss));
 
